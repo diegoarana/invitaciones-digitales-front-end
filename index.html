@@ -21,12 +21,17 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <!-- animaciones con css -->
     <link href="css/animate.css" rel="stylesheet" type="text/css">
 
     <!-- AddEvent script -->
     <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <link href="css/addEventStyle.css" rel="stylesheet" type="text/css">
+
+    <!-- preloader -->
+    <script src="js/pace/pace.min.js"></script>
+    <link href="js/pace/pace-theme-center-atom.css" rel="stylesheet" />
 
   </head>
 
@@ -52,7 +57,7 @@
               <a class="nav-link js-scroll-trigger" href="#padrinos">Padrinos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Asistencia</a>
+              <a class="nav-link js-scroll-trigger" href="#confirmarAsistencia">Confirmar Asistencia</a>
             </li>
           </ul>
         </div>
@@ -113,19 +118,24 @@
             </span>
             <h3 class="service-heading animated-element-1">Te esperamos para divertirnos</h3>
             <h3 class="service-heading animated-element-1">Cuando: DD/MM/YYYY - 18:30</h3>
-            <h3 class="service-heading animated-element-1">Dirección: Calle 64 #99</h3>
+            <h3 class="service-heading animated-element-1">Dirección: Av. 44 #474 e/ 4 y 5, La Plata, Buenos Aires</h3>
 
-            <!-- Button code -->
-            <div title="Agregar al calendario" class="addeventatc animated-element-1">
+            <!-- Button code addevent-->
+            <div title="Agregar al calendario" class="addeventatc btn animated-element-1 marginEntreBotones">
               Agregar al calendario
               <span class="start">07/27/2018 08:00 AM</span>
               <span class="end">07/27/2018 10:00 AM</span>
               <span class="timezone">America/argentina</span>
               <span class="title">Cumpleaño de Mateo</span>
               <span class="description">Cumpleaño de Mateo</span>
-              <span class="location">Calle 64 #99</span>
+              <span class="location">Av. 44 #474 e/ 4 y 5, La Plata, Buenos Aires</span>
             </div>
 
+            <!-- ver en mapa -->
+            <button type="button" class="btn btn-info boton-ver-mapa  animated-element-1" data-toggle="modal" data-target="#modalVerMapa">
+              Ver en mapa
+            </button>
+          
           </div>
         </div>
       </div>
@@ -207,7 +217,7 @@
     </section>
 
     <!-- Confirmar asistencia -->
-    <section class="bg-light" id="team">
+    <section class="bg-light" id="confirmarAsistencia">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center padding-titulos">
@@ -220,7 +230,7 @@
                   <div class="form-row">
                     <div class="form-group col-md-5">
                       <label for="inputName">Nombre y Apellido</label>
-                      <input type="text" class="form-control" id="inputName" required>
+                      <input type="text" class="form-control" id="inputNombre" required>
                       <div class="invalid-feedback">
                         Completá con tu nombre y apellido.
                       </div>
@@ -246,10 +256,12 @@
           
         </div>
       </div>
+
+
     </section>
 
     <!-- foto final -->
-    <section id="contact">
+    <section id="fotoFinal">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center animated-element-2">
@@ -280,6 +292,33 @@
       </div>
     </footer>
 
+  <!-- Ver Mapa Modal -->
+<div class="modal fade" id="modalVerMapa" tabindex="-1" role="dialog" aria-labelledby="verMapaLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="verMapaLabel">Casa de fiestas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="maps">
+          <iframe class="mapa-pop" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB1geNxkp_O4NgreB1jwUeAOh2Cu_j7Gjw&amp;q=Av. 44 474, La Plata, Buenos Aires "
+              height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        </div>
+        <h3 class="">Te esperamos para divertirnos </h3>
+        <div class="">Cuándo: dd/mm/aaaa 18:00 </div>
+        <div class="">Dirección: Av. 44 474, La Plata, Buenos Aires</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
@@ -287,10 +326,6 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>

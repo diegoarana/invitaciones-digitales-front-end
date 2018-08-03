@@ -18,6 +18,8 @@
     }, false);
   })();
 
+
+  // COUNTDOWN CONFIG
   $('#clock').countdown('2018/09/28', function(event) {
     var $this = $(this).html(event.strftime(''
         + '<span class="wraper-clock"><div class="value">%D</div><div class="value-label">Días</div></span><span class="sep">:</span>'
@@ -26,7 +28,15 @@
         + '<span class="wraper-clock"><div class="value">%S</div><div class="value-label">Segundos</div></span>'));
   });
 
+  window.addeventasync = function(){
+    // ADDEVENT CONFIG
+    addeventatc.settings({
+    license : "replace-with-your-licensekey",
+    css : false
+  });
+};
 
+// ANIMATION CONFIG
 $(document).ready(function(){
 
     $('.animated-element-1').css('opacity', '0');

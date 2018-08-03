@@ -54,14 +54,6 @@ section h3.section-subheading {
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/*
-@media (min-width: 768px) {
-  section {
-    padding: 150px 0;
-  }
-}
-*/
-
 .btn {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -602,7 +594,7 @@ header.masthead .intro-text .intro-heading {
   margin-top: 0;
 }
 
-section#contact {
+section#fotoFinal {
   background-color: #212529;
   background-image: url("../img/imagenes-principales/footer.jpg");
   background-repeat: no-repeat;
@@ -624,53 +616,53 @@ section#contact {
 }
 
 
-section#contact .section-heading {
+section#fotoFinal .section-heading {
   color: #fff;
 }
 
-section#contact .form-group {
+section#fotoFinal .form-group {
   margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
+section#fotoFinal .form-group input,
+section#fotoFinal .form-group textarea {
   padding: 20px;
 }
 
-section#contact .form-group input.form-control {
+section#fotoFinal .form-group input.form-control {
   height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+section#fotoFinal .form-group textarea.form-control {
   height: 248px;
 }
 
-section#contact .form-control:focus {
+section#fotoFinal .form-control:focus {
   border-color: #fed136;
   box-shadow: none;
 }
 
-section#contact ::-webkit-input-placeholder {
+section#fotoFinal ::-webkit-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-section#contact :-moz-placeholder {
+section#fotoFinal :-moz-placeholder {
   font-weight: 700;
   color: #ced4da;
   /* Firefox 18- */
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-section#contact ::-moz-placeholder {
+section#fotoFinal ::-moz-placeholder {
   font-weight: 700;
   color: #ced4da;
   /* Firefox 19+ */
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-section#contact :-ms-input-placeholder {
+section#fotoFinal :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -779,4 +771,18 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     display: inline-block;
   }
 
+}
+
+.mapa-pop{
+  width: 100%;
+}
+
+
+.boton-ver-mapa {
+  background-color: #009999;
+  margin: 8px;
+}
+
+.marginEntreBotones{
+  margin: 8px;
 }
