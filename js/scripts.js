@@ -10,7 +10,39 @@
             event.preventDefault();
             event.stopPropagation();
             if (form.checkValidity() === true) {
-                console.log('llamada ajax!')
+                
+              // sfdfsf
+              var name = $("#inputName").val();
+              var email = $("#inputEmail").val();
+              var message = $("#inputMessage").val();
+              var confirmButton = $("#confirm");
+              confirmButton.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+              $.ajax({
+                  url: "www.venite.ga/confirmar/",
+                  type: "POST",
+                  data: {
+                    inputName: name,
+                    inputEmail: email,
+                    inputMessage: message
+                  },
+                  cache: false,
+                  success: function(resp, xhr, status) {
+                    // Success message
+                    $("#divConfirmForm").html("<div class='col-md-12 animated-element-2' style='text-align:center;'><span class='fa-stack fa-4x animated-element-1'><i class='fa fa-circle fa-stack-2x text-primary'></i><i class='fa fa-check fa-stack-1x fa-inverse'></i></span></div><div class='col-md-12 alert alert-success' style='text-align:  center;'> <p>Confirmación enviada correctament.</p> </div>")
+                  },
+                  error: function(xhr, status, error) {
+                    // Fail message
+                    $("#divConfirmForm").html("<div class='col-md-12 alert alert-danger animated-element-2' style='text-align:center;'> <p> Hubo un error en el servidor.</p><p> Intente de nuevo más tarde.</p> </div>")
+                  
+                  },
+                  complete: function(xhr, status) {
+                    setTimeout(function() {
+                      confirmButton.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+                    }, 1000);
+                  }
+                });
+              //sfsfsd
+
           }
           form.classList.add('was-validated');
         }, false);
@@ -44,5 +76,34 @@ $(document).ready(function(){
 
     $('.animated-element-1').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeInUp');},{offset:'90%'});})
     $('.animated-element-2').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeIn');},{offset:'60%'});})
+
+
+    updateCarouselSizes();
+
+
+    function updateCarouselSizes(){
+      $(".carousel").each(function(){ 
+        if($(this).find('.item,.carousel-item').length) {
+          // We've found one or more item within the Carousel...
+          $(this).carousel(); // Initialise the carousel (include options as appropriate)
+          // Now we iterate through each item within the carousel...
+          var maxheight= $('.item,.carousel-item').first().outerHeight()
+          $(this).find('.item,.carousel-item').each(function(k,v){ 
+            console.log(maxheight);
+            if($(this).outerHeight()<maxheight) {
+              // This item is the tallest we've found so far, so store the result...
+              console.log(maxheight);
+              maxheight=$(this).outerHeight();
+            }
+          });
+          // Finally we set the carousel's min-height to the value we've found to be the tallest...
+          $(".carousel-inner").css("height",maxheight+"px");
+        }
+      });
+    }
+
+    $( window ).resize(function() {
+      updateCarouselSizes();
+    });
 
 });

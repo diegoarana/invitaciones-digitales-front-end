@@ -711,10 +711,11 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #fed136;
 }
 
-.carousel-item img{
+.decoration-border{
   margin: 0 auto;
   border: 7px solid #e9ecef;
-  border-radius: 20px
+  border-radius: 20px;
+ 
 }
 
 .padding-titulos{
