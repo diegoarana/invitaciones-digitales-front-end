@@ -63,8 +63,9 @@
   window.addeventasync = function(){
     // ADDEVENT CONFIG
     addeventatc.settings({
-    license : "replace-with-your-licensekey",
-    css : false
+      appleical  : {show:false, text:"Apple Calendar"},
+      license : "replace-with-your-licensekey",
+      css : false
   });
 };
 
@@ -89,10 +90,8 @@ $(document).ready(function(){
           // Now we iterate through each item within the carousel...
           var maxheight= $('.item,.carousel-item').first().outerHeight()
           $(this).find('.item,.carousel-item').each(function(k,v){ 
-            console.log(maxheight);
             if($(this).outerHeight()<maxheight) {
               // This item is the tallest we've found so far, so store the result...
-              console.log(maxheight);
               maxheight=$(this).outerHeight();
             }
           });
