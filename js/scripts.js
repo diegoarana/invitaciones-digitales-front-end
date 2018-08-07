@@ -2,6 +2,10 @@
 (function() {
     'use strict';
     window.addEventListener('load', function() {
+
+      // start preloader
+      $(".cover").fadeOut(2000);
+
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
       // Loop over them and prevent submission
@@ -11,7 +15,7 @@
             event.stopPropagation();
             if (form.checkValidity() === true) {
                 
-              // sfdfsf
+              // catch input values
               var name = $("#inputName").val();
               var email = $("#inputEmail").val();
               var message = $("#inputMessage").val();
@@ -41,7 +45,6 @@
                     }, 1000);
                   }
                 });
-              //sfsfsd
 
           }
           form.classList.add('was-validated');
@@ -72,37 +75,36 @@
 // ANIMATION CONFIG
 $(document).ready(function(){
 
-    $('.animated-element-1').css('opacity', '0');
-    $('.animated-element-2').css('opacity', '0');
+  $('.animated-element-1').css('opacity', '0');
+  $('.animated-element-2').css('opacity', '0');
 
-    $('.animated-element-1').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeInUp');},{offset:'90%'});})
-    $('.animated-element-2').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeIn');},{offset:'60%'});})
+  $('.animated-element-1').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeInUp');},{offset:'90%'});})
+  $('.animated-element-2').each(function(){$(this).waypoint(function(){$(this.element).addClass('animated fadeIn');},{offset:'60%'});})
 
-
-    updateCarouselSizes();
-
-
-    function updateCarouselSizes(){
-      $(".carousel").each(function(){ 
-        if($(this).find('.item,.carousel-item').length) {
-          // We've found one or more item within the Carousel...
-          $(this).carousel(); // Initialise the carousel (include options as appropriate)
-          // Now we iterate through each item within the carousel...
-          var maxheight= $('.item,.carousel-item').first().outerHeight()
-          $(this).find('.item,.carousel-item').each(function(k,v){ 
-            if($(this).outerHeight()<maxheight) {
-              // This item is the tallest we've found so far, so store the result...
-              maxheight=$(this).outerHeight();
-            }
-          });
-          // Finally we set the carousel's min-height to the value we've found to be the tallest...
-          $(".carousel-inner").css("height",maxheight+"px");
-        }
-      });
-    }
-
-    $( window ).resize(function() {
-      updateCarouselSizes();
+  // changes dinamically size of images
+  function updateCarouselSizes(){
+    $(".carousel").each(function(){ 
+      if($(this).find('.item,.carousel-item').length) {
+        // We've found one or more item within the Carousel...
+        $(this).carousel(); // Initialise the carousel (include options as appropriate)
+        // Now we iterate through each item within the carousel...
+        var maxheight= $('.item,.carousel-item').first().outerHeight()
+        $(this).find('.item,.carousel-item').each(function(k,v){ 
+          if($(this).outerHeight()<maxheight) {
+            // This item is the tallest we've found so far, so store the result...
+            maxheight=$(this).outerHeight();
+          }
+        });
+        // Finally we set the carousel's min-height to the value we've found to be the tallest...
+        $(".carousel-inner").css("height",maxheight+"px");
+      }
     });
+  }
+
+  updateCarouselSizes();
+
+  $( window ).resize(function() {
+    updateCarouselSizes();
+  });
 
 });
