@@ -115,6 +115,7 @@
         </div>
         <div class="row text-center">
           <div class="col-md-12">
+
             <span class="fa-stack fa-4x animated-element-1">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-home fa-stack-1x fa-inverse"></i>
@@ -124,7 +125,7 @@
             <h3 class="service-heading animated-element-1">Dirección: Av. 44 #474 e/ 4 y 5, La Plata, Buenos Aires</h3>
 
             <!-- ver en mapa -->
-            <button type="button" class="btn btn-info boton-ver-mapa  animated-element-1" data-toggle="modal" data-target="#modalVerMapa">
+            <button type="button" class="btn btn-info boton-donde-cuando animated-element-1" data-toggle="modal" data-target="#modalVerMapa">
                 Cómo llegar
             </button>
 
@@ -139,6 +140,8 @@
               <span class="description">Cumpleaño de Mateo</span>
               <span class="location">Av. 44 #474 e/ 4 y 5, La Plata, Buenos Aires</span>
             </div>
+
+            <button id="downloadInvitation" class="btn btn-info animated-element-1 boton-donde-cuando">Descargar invitación</button>
           
           </div>
         </div>
@@ -211,7 +214,7 @@
           </div>
           <div class="col-sm-6">
             <div class="team-member animated-element-1">
-              <img class="mx-auto rounded-circle" src="img/padrinos/2.jpg" alt="foto-padrino">
+              <img class="mx-auto rounded-circle" src="img/padrinos/Padrino.jpg" alt="foto-padrino">
               <h4>César Arana</h4>
               <p class="text-muted">Tío</p>
             </div>
@@ -324,8 +327,19 @@
   </div>
 </div>
 
-<div class="cover"></div>
+  <!-- div2image -->
+  <div>
+      <div id="div2pdf" style="background: #009999;text-align: center;height: 200px; width: 600px; padding: 25px;">
+        <h3 style="color:#fed136">Te esperamos para divertirnos</h3>
+        <h3 style="color:#fed136">Cuando: 30/09/2018 - 18:00</h3>
+        <h3 style="color:#fed136">Dirección: Av. 44 #474 e/ 4 y 5, La Plata, Buenos Aires</h3>
+      </div>
+    
+      <div id="base64" style="display: none;"></div>
+  </div>
 
+<!-- cover to preloader -->
+<div class="cover"></div>
 
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -343,15 +357,10 @@
     <!-- trigger animattion when scroll -->
     <script src="js/jquery.waypoints.min.js"></script>
     <!-- my own scripts -->
-    <script src="js/scripts.js"></script>
-
-    <script>
-
-      //Pace.on("done", function(){
-        //$(".cover").hide();
-      //});
-    </script>
-
+    <script src="js/scripts.js"></script> 
+    
+    <!-- html2canvas -->
+    <script src="js/html2canvas.js"></script>
 
   </body>
 

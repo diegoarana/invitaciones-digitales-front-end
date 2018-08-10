@@ -778,8 +778,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   width: 100%;
 }
 
-
-.boton-ver-mapa {
+.boton-donde-cuando {
   background-color: #009999;
   margin: 8px;
 }
@@ -797,4 +796,3 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   z-index: 1999;
   background:rgb(33,33,33);
 }
-

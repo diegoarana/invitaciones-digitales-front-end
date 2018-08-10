@@ -5,6 +5,16 @@
 
       // start preloader
       $(".cover").fadeOut(2000);
+      // div2image
+      html2canvas($("#div2pdf")[0]).then(canvas =>{
+        var a = document.createElement('a');
+        // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+        a.href = canvas.toDataURL("image/jpg");
+        a.className='linkToDownload'
+        var divBase64= document.getElementById("base64");
+        divBase64.insertAdjacentHTML( 'afterbegin', a );
+        $("#div2pdf").fadeOut(1);
+      });
 
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
@@ -106,5 +116,14 @@ $(document).ready(function(){
   $( window ).resize(function() {
     updateCarouselSizes();
   });
+
+  
+  $('#downloadInvitation').click(function(){
+    var a = document.createElement('a');
+    a.href = $("#base64")[0].innerHTML;
+    a.download = 'invitacion.jpg';
+    a.click();
+  });
+
 
 });
